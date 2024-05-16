@@ -1,0 +1,442 @@
+@import url(fonts.css);
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(---background-body);
+    
+}
+
+:root{
+    ---azul_escuro:#3E3C4C;
+    ---azul_bebe:#9BF2FE;
+    ---background-body:#E0E0E0;
+    ---font-principal: "Assistant", sans-serif; 
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+}
+
+.content .forms{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 30px;
+    width: 524px;
+    margin:30px 0;
+    padding: 10px;
+    background-color: #fff;
+}
+.content .forms .logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.content .forms .titulo{
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    align-items: center;
+}
+
+.content .forms .titulo .circle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border: 2px solid var(---azul_escuro);
+    border-radius: 50%;
+}
+.content .forms .titulo .circle span{
+    font-size: 20px;
+    color: var(---azul_escuro);
+}
+.content .forms .titulo .informacoes{
+    font-family: var(---font-principal);
+}
+.content .forms .titulo .informacoes .step{
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.content .forms .titulo .informacoes .strong{
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.content .forms .circle{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border: 3px solid var(---azul_escuro);
+    border-radius: 50%;
+}
+
+.content .forms .circle span{
+    font-size: 35px;
+    color: var(---azul_escuro);
+}
+.content .forms .circle input[type="file"]{
+    display: none;
+}
+
+.content .forms .circle label{
+    display: flex;
+    position: absolute;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+.content .form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
+.content .form .titulos{
+    font-family: var(---font-principal);
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.content .form .box .btn-edit-password{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 0;
+    top: -12px;
+    border: none;
+    background-color: transparent;
+    z-index: 1;
+    cursor: pointer;
+    padding: 5px;
+    transition: .2s all;
+    border-radius: 50%;
+    outline: none;
+}
+
+
+.content .form .box .btn-edit-password p{
+    color: var(---azul_escuro);
+    pointer-events: none;
+}
+
+.content .form .box .btn-edit-email{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 0;
+    top: -12px;
+    border: none;
+    background-color: transparent;
+    z-index: 1;
+    cursor: pointer;
+    padding: 5px;
+    transition: .2s all;
+    border-radius: 50%;
+}
+
+
+.content .form .box .btn-edit-email p{
+    color: var(---azul_escuro);
+    pointer-events: none;
+}
+
+
+
+.content .form .box{
+    position: relative;
+    margin-bottom: 10px;
+
+}
+.content .form .box input{
+    position: relative;
+    width: 500px;
+    height: 30px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    margin-bottom: 3px;
+    border-bottom: 3px solid var(---azul_escuro);
+}
+
+.content .form .box label{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    font-family: var(---font-principal);
+    font-size: 18px;
+    font-weight: 600;
+    pointer-events: none;
+    color: #3e3c4c86;
+}
+
+.box input:focus + label,
+.box input:valid + label{
+    transform: translateY(-25px);
+}
+
+.box .select{
+    width: 100%;
+    position: relative;
+    border: none;
+    font-size: 18px;
+    outline: none;
+    border-bottom: 3px solid var(---azul_escuro);
+    font-family: var(---font-principal);
+}
+
+.content .form .btn-forms{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    justify-content: end;
+}
+
+.content .form .btn-forms button{
+    width: 20%;
+    height: 45px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    font-family: var(---font-principal);
+    font-weight: bold;
+    font-size: 16px;
+    transition: .2s all;
+}
+
+.content .form .btn-forms .cancelar{
+    background-color: var(---azul_escuro);
+    color: var(---background-body);
+}
+
+.content .form .btn-forms .salvar{
+    background-color: var(---azul_bebe);
+    color: var(---azul_escuro);
+}
+
+/* Hover focus button */
+.content .form .btn-forms .salvar:hover{
+    background-color: #9bf2feaf;
+}
+
+.content .form .btn-forms .cancelar:hover{
+    background-color: #3e3c4cb3;
+}
+
+.content .form .box .btn-edit:active{
+    background-color: #c1c1c189;
+}
+/* Fim Hover focus button */
+
+
+.content .modal-container{
+    display: none;
+    position: fixed;
+    width: 100%;
+}
+.content .modal-background{
+    width: 100%;
+    height: 100vh;
+    background-color: #0000009c;
+    width: 100%;
+}
+
+.content .modal-edit-password{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    position: fixed;
+    top: 20%;
+    left: 37%;
+    transform: translate(-20% -37%);
+    background-color: #fff;
+    width: 400px;
+    border-radius: 10px;
+}
+
+.content .modal-edit-password .modal-header{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border-bottom: 1px solid var(---azul_escuro);
+    padding: 20px;
+}
+.content .modal-edit-password .modal-header span{
+    display: flex;
+    color: var(---azul_bebe);
+}
+.content .modal-edit-password .modal-header .titulo{
+    font-family: var(---font-principal);
+    color: var(---azul_escuro);
+    font-weight: 600;
+}
+.content .modal-edit-password .form-modal{
+    display: flex;
+    flex-direction: column;
+    row-gap: 60px;
+    padding: 20px;
+}
+.content .modal-edit-password .form-modal .box{
+    position: relative;
+    width: 100%;
+    height: 30px;
+}
+.content .modal-edit-password .form-modal .box .visibility-password{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-color: transparent;
+    top: -3px;
+    right: 1px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+}
+.content .modal-edit-password .form-modal .box-btn{
+    width: 100%;
+    display: flex;
+    padding: 0 10px;
+    justify-content: space-between;
+}
+.content .modal-edit-password .form-modal .box-btn .cancelar{
+    width: 100px;
+    height: 35px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: none;
+    color: var(---azul_escuro);
+    font-family: var(---font-principal);
+    font-weight: 700;
+    font-size: 16px;
+    transition: .5s all;
+    cursor: pointer;
+}
+
+.content .modal-edit-password .form-modal .box-btn input{
+    width: 140px;
+    height: 35px;
+    background-color: #3E3C4C;
+    color: var(---background-body);
+    font-weight: 500;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    transition: .4s all;
+    cursor: pointer;
+}
+
+.content .modal-edit-password .form-modal .box-btn input:hover{
+    background-color: #3e3c4c9c;
+}
+
+.content .modal-edit-password .form-modal .box-btn .cancelar:hover{
+    background-color: #ababab;
+}
+
+
+.content .modal-edit-password .form-modal .box input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-bottom: 2px solid var(---azul_escuro);
+    outline: none;
+    font-size: 16px;
+    padding: 0 30px 0 0;
+}
+
+
+/* Funcionalidade */
+.content .modal-container.show{
+    display: block;
+}
+
+
+
+.box span{
+    position: relative;
+    bottom: 0px;
+    font-family: var(---font-principal);
+    display: none;
+    font-size: 14px;
+ }
+ 
+ .box.erro span{
+     color: red;
+     display: block;
+     font-weight: 600;
+ }
+
+ .content .form .box span{
+    position: relative;
+    bottom: 0px;
+    font-family: var(---font-principal);
+    display: none;
+    font-size: 14px;
+ }
+ 
+ .content .form .box.erro span{
+     color: red;
+     display: block;
+     font-weight: 600;
+ }
+
+
+
+
+/* Responsividade */
+
+@media only screen and (min-width: 320px ) and (max-width: 480px){
+    .content{
+        margin: 0 15px;
+    }
+    .content .forms{
+        width: 100%;
+    }
+    .content .form{
+        width: 100%;
+    }
+    .content .form .box input{
+        width: 100%;
+    }
+    
+}
+
+@media only screen and (min-width: 481px ) and (max-width: 1024px){
+    .content{
+        margin: 0 15px;
+    }
+    .content .forms{
+        width: 100%;
+    }
+    .content .form{
+        width: 100%;
+    }
+    .content .form .box input{
+        width: 100%;
+    }
+}
+
+

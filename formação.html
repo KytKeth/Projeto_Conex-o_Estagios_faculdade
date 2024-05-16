@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="src/css/formacao.css">
+    <title>Meu Perfil | Formação</title>
+    <script src="src/JS/Modal.js" defer></script>
+</head>
+<body>
+    <main class="content">
+    <section class="formacao">
+    <img class="logo" src="src/img/Logo_black.svg" alt="logo">
+
+    <div class="titulo">
+    <div class="circle">
+    <span class="material-symbols-outlined">
+    book_2
+    </span>
+    </div>
+
+    <div class="informacoes">
+    <p class="step">Passo 02 de 04</p>
+    <p class="strong">Formação</p>
+    </div>
+    </div>
+    <button class="add-modal">
+    Adicionar Formação
+    </button>
+    <a href="dashboard_candidato.html" class="link-voltar-perfil">
+        Voltar ao Perfil
+    </a>
+    </section>
+
+    <section class="modal-container">
+    <div class="modal">
+    <div class="titulo">
+    <h2>Formação</h2>
+    </div>
+
+    <form class="forms" action="" method="post">
+    <h2 class="subtitulo">Tipo de Ensino</h2>
+    <div class="box-radio">
+    <input type="radio" name="ensino" id="distancia">
+    <label for="a distancia">A distancia</label>
+    </div>
+    <div class="box-radio">
+    <input type="radio" name="ensino" id="semipresencial">
+    <label for="semipresencial">Semipresencial</label>
+    </div>
+    <div class="box-radio">
+    <input type="radio" name="ensino" id="presencial">
+    <label for="presencial">Presencial</label>
+    </div>
+
+    <h2 class="subtitulo">Periodo do curso</h2>
+    <div class="box-radio">
+    <input type="radio" name="perido" id="matutino">
+    <label for="matutino">Matutino</label>
+    </div>
+    <div class="box-radio">
+    <input type="radio" name="perido" id="vespertino">
+    <label for="vespertino">Vespertino</label>
+    </div>
+    <div class="box-radio">
+    <input type="radio" name="perido" id="noturno">
+    <label for="noturno">Noturno</label>
+    </div>
+    <div class="box-radio">
+    <input type="radio" name="perido" id="integral">
+    <label for="integral">Integral</label>
+    </div>
+
+    <div class="box">
+    <input type="text" name="instituicao-ensino" id="instituicao-ensino" required>
+    <label for="instituicao-ensino">Instituicao de Ensino</label>
+    </div>
+    <div class="box">
+    <h3 class="titulo-data">Tipo de formação</h3>
+    <select name="tipo-formacao" id="tipo-formacao">
+    <option></option>
+    <option value="bacharelado">Bacharelado</option>
+    <option value="tecnologo">Tecnólogo</option>
+    <option value="licenciatura">Licenciatura</option>
+    </select>
+    </div>
+
+    <div class="box">
+    <input type="text" name="curso" id="curso" required>
+    <label for="curso">Curso</label>
+    </div>
+
+    <div class="box">
+    <h3 class="titulo-data">Data de Termino</h3>
+    <input type="date" name="data-termino" id="data-termino" required>
+    </div>
+
+    <div class="box-check">
+    <input type="checkbox" name="declaracao" id="declaracao">
+    <label for="declaracao">Declaro que as informações acima são verdadeira</label>
+    </div>
+    
+    <div class="btn-modal">
+    <button class="cancelar">
+    Cancelar
+    </button>
+    <button class="salvar">
+    Salvar
+    </button>
+    </div>
+    
+    </form>
+    </div>
+    </section>
+    </main>
+</body>
+</html>

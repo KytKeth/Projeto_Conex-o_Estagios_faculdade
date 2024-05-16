@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="src/css/style.css">
+    <title>Conexão Estagios - Site de Estagios na área de TI</title>
+    <script src="src/JS/main.js" defer></script>
+</head>
+<body>
+    <header class="cabecalho">
+    <button class="btn-menu">
+    <span class="material-symbols-outlined">
+    menu
+    </span>
+    </button>
+    <a href="tela_de_vagas.html"><img class="logo" src="src/img/logo.svg" alt="logo Conexão Estagios"></a>
+
+    <nav class="menu">
+    <ul>
+    <button class="btn-vagas">Vagas Abertas</button>
+    <li><a href="#alerta_vagas">Alerta de Vagas</a></li>
+    </ul>
+    </nav>
+    <a class="button-entrar" href="tela_de_login.html">Entrar</a>
+    </header>
+
+    <main class="content">
+
+    <section class="search-filter">
+    <div class="search">
+    <input type="text" name="search" id="search" placeholder="Pesquise por vagas">
+    <button class="btn-search">
+    <span class="material-symbols-outlined">
+    search
+    </span>
+    </button>
+    </div>
+    <div class="filter">
+    <button class="btn-filter">
+    <span class="material-symbols-outlined">
+    tune
+    </span>
+    <p class="text-filter">Filtros</p>
+    </button>
+    </div>
+    </section>
+    <!-- modal Filtro -->
+    <div class="modal-filtro">
+    <div class="filtros-modal">
+    <h2 class="titulo">
+    Filtros
+    </h2>
+    <div class="filtros">
+    <div class="form-local">
+    <form action="#" method="post">
+    <input type="text" name="localizacao" id="localizacao_filtro" placeholder="Locais...">
+    <datalist id="localizacao">
+    </datalist>
+    </form>
+    </div>
+    <div class="btns-modelo-trabalho">
+    <button class="modelo" name="home-office">
+    Home Office
+    </button>
+    <button class="modelo" name="hibrido">
+    Hibrido
+    </button>
+    <button class="modelo" name="presencial">
+    Presencial
+    </button>
+    </div>
+    </div>
+    <div class="limpa-busca">
+    <form action="#" method="post">
+    <input type="reset" value="Limpar filtros">
+    <input type="submit" value="Buscar">
+    </form>
+    </div>
+    </div>
+    </div>
+    </div>
+    <!-- Fim modal Filtro -->
+    <!-- Sidebar menu -->
+    <aside class="sidebar-menu">
+    <button class="btn-close">
+    <span class="material-symbols-outlined">
+    close
+    </span>
+    </button>
+    <nav class="nav-menu">
+    <a class="color-blue" href="tela_de_vagas.html">Vagas Abertas</a>
+    <a href="#alerta_vagas">Alerta de vagas</a>
+    <a href="tela_de_cadastro.html">Fazer Cadastro</a>
+    <a href="tela_de_login.html">Entrar</a>
+    </nav>
+    <div class="redes">
+    <span><img src="src/img/instagram 1.svg" alt="logo instagram"></span>
+    <span><img src="src/img/linkedin 1.svg" alt="logo linkedin"></span>
+    <span><img src="src/img/youtube 1.svg" alt="logo youtube"></span>
+    </div>
+    </aside>
+
+    <hr>
+
+    <section id="container">
+    <div class="tab-buttons">
+    <div class="buttons-container">
+    
+    <button class="tab-btn active" id="btn-vagas" content-id="vagas">
+    Vagas Abertas
+    </button>
+    </div>
+    </div>
+    </section>
+
+    <section class="tab-contents">
+    <section class="content" id="vagas">
+    <div class="box-container">
+
+    <a href="#" class="box-vagas">
+    <h2 class="titulo">
+    Estágio Nome da Empresa
+    </h2>
+    <div class="descricao-vaga">
+    <p>
+    Estágio em P&D - Desenvolvimento de Aplicações Industriais
+    </p>
+    </div>
+    <div class="localizacao-estado">
+    <span class="material-symbols-outlined">
+    Location_on
+    </span>
+    <p class="estado">
+    Estado
+    </p>
+    </div>
+   <div class="data">
+    <span class="material-symbols-outlined">
+    calendar_today
+    </span>
+    Encerra em 
+    <data value="data-vaga">00/00/00</data>
+   </div>
+    </a>
+    </div>
+    </section>
+    </section>
+    <hr>
+
+    <section class="alert-vagas" id="alerta_vagas">
+    <div class="texts">
+    <h2>Não perca nossas oportunidades!</h2>
+    <p>Insira seu e-mail para receber alertas exclusivos.</p>
+    </div>
+    <div class="email-button">
+    <input type="email" name="email" id="" placeholder="Insira se email aqui">
+    <input type="submit" name="submit" value="Receber Alerta">
+    </div>
+    </section>
+    </main>
+     <!-- Footer -->
+   <footer class="footer">
+    <p>&copy; 2014 Grupo10, Todos os direitos reservados</p>
+    <div class="redes">
+    <span><img src="src/img/instagram 1.svg" alt=""></span>
+    <span><img src="src/img/linkedin 1.svg" alt=""></span>
+    <span><img src="src/img/youtube 1.svg" alt=""></span>
+    </div>
+   </footer>
+</body>
+</html>

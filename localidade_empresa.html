@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="src/css/localidade_empresa.css">
+    <title>Meu Perfil | Localidade</title>
+    <script src="src/JS/localidade.js" defer></script>
+</head>
+<body>
+    <main class="content">
+    <section class="localidade">
+    <img class="logo" src="src/img/Logo_black.svg" alt="logo">
+
+    <div class="titulo">
+    <div class="circle">
+    <span class="material-symbols-outlined">
+    public
+    </span>
+    </div>
+
+    <div class="informacoes">
+    <p class="strong">Localização</p>
+    </div>
+    </div>
+    <button class="add-modal">
+    Adicionar Localização
+    </button>
+    <a href="dashboard_empresa.html" class="link-voltar-perfil">
+        Voltar ao Perfil
+    </a>
+    </section>
+
+    <section class="modal-container">
+    <div class="modal">
+    <div class="titulo">
+    <h2>Localização</h2>
+    </div>
+    <form class="forms" action="" method="post">
+    <div class="box">
+    <input type="text" name="cep" id="cep" required>
+    <label for="cep">CEP</label>
+    </div>
+    <div class="box">
+    <input type="text" name="endereco" id="endereco" required>
+    <label for="endereco">Endereço</label>
+    </div>
+
+    <div class="box">
+    <input type="text" name="numero" id="numero" required>
+    <label for="numero">Número</label>
+    </div>
+    <div class="box">
+    <input type="text" name="complemento" id="complemento" required>
+    <label for="complemento">Complemento</label>
+    </div>
+    <div class="box">
+    <input type="text" name="bairro" id="bairro" required>
+    <label for="bairro">Bairro</label>
+    </div>
+    
+    <div class="box">
+    <input type="text" name="cidade" id="cidade" required>
+    <label for="cidade">Cidade</label>
+    </div>
+
+    <div class="box">
+    <input type="text" name="estado" id="estado" required>
+    <label for="estado">Estado</label>
+    </div>
+
+    <div class="btn-modal">
+    <input type="submit" value="Cancelar" class="cancelar">
+    </input>
+    <input class="salvar" type="submit" value="Salvar">
+    </input>
+    </div>
+    
+    </form>
+    </div>
+    </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <link rel="stylesheet" href="src/css/formulario_informaçoes_gerais.css">
+    <title>Meu Perfil | Informações Gerais</title>
+    <script src="src/JS/tela_informacoes_gerais.js" defer></script>
+</head>
+<body>
+    <main class="content">
+    <section class="forms">
+    <img class="logo" src="src/img/Logo_black.svg" alt="logo">
+
+    <div class="titulo">
+    <div class="circle">
+    <span class="material-symbols-outlined">
+    edit_square
+    </span>
+    </div>
+    <div class="informacoes">
+    <p class="step">Passo 01 de 04</p>
+    <p class="strong">Informações Gerais</p>
+    </div>
+    </div>
+
+    <div class="circle">
+    <input type="file" name="foto" id="foto">
+    <label for="foto"></label>
+    <span class="material-symbols-outlined">
+    person_add
+    </span>
+    </div>
+
+    <form class="form" action="" method="post">
+    <div class="box">
+    <input type="text" name="nome" id="nome">
+    <label for="nome">Nome</label>
+    <span></span>
+    </div>
+    <div class="box">
+    <input type="text" name="sobrenome" id="sobrenome">
+    <label for="sobrenome">Sobrenome</label>
+    <span></span>
+    </div>
+
+    <div class="box">
+    <input type="date" name="data-nasc" id="data-nasc">
+    <span></span>
+    </div>
+    <h3 class="titulos">Identidade de Gênero</h3>
+    <div class="box">
+    <select class="select" name="sexo" id="sexo">
+    <option class="titulo-opcao">Sexo</option>
+    <option value="feminino">Mulher Cis</option>
+    <option value="masculino">Homem Cis</option>
+    <option value="nao-binario">Não-Binario</option>
+    <option value="outro">Não declarar</option>
+    <option value="mulher-transgênero">Mulher transgênero</option>
+    <option value="homem-transgênero">Homem transgênero</option>
+    <option value="nao-informar">Prefiro não Informar</option>
+    </select>
+    <span></span>
+    </div>
+
+    <h3 class="titulos">Documentos de Identificação</h3>
+    <div class="box">
+    <input type="text" name="cpf" id="cpf">
+    <label for="cpf">CPF</label>
+    <span></span>
+    </div>
+
+    <div class="box">
+    <button class="btn-edit-password" title="editar">
+    <p class="material-symbols-outlined">
+    edit
+    </p>
+    </button>
+    <input type="password" name="senha" id="senha">
+    <label for="senha">Senha</label>
+    <span></span>
+    </div>
+
+    <div class="box">
+    <select class="select" name="estado-civil" id="estado-civil">
+    <option class="titulo-opcao">Estado Civil</option>
+    <option value="solteiro">Solteiro</option>
+    <option value="casado">Casado</option>
+    <option value="separado">Separado</option>
+    <option value="divorciado">Divorciado</option>
+    <option value="viuvo">Viúvo</option>
+    </select>
+    <span></span>
+    </div>
+
+    <h3 class="titulos">Contatos</h3>
+    <div class="box">
+    <button class="btn-edit-email" title="editar">
+    <p class="material-symbols-outlined">
+    edit
+    </p>
+    </button>
+    <input type="email" name="email"  id="email">
+    <label for="email">Email</label>
+    <span></span>
+    </div>
+
+    <div class="box">
+    <input type="tel" name="celular" id="celular">
+    <label for="celular">Celular</label>
+    <span></span>
+    </div>
+    
+    <div class="box">
+    <input type="text" name="link-l" id="link-l">
+    <label for="link-l">Link - LinkdIn</label>
+    </div>
+    <div class="box">
+    <input type="text" name="link-p" id="link-p">
+    <label for="link-p">Link - Portfolio</label>
+    </div>
+
+    <div class="btn-forms">
+    <button class="cancelar" type="submit" name="cancelar">
+    Cancelar
+    </button>
+    <button class="salvar" type="submit" name="salvar">
+    Salvar
+    </button>
+    </div>
+    </form>
+    </section>
+
+    
+    <div class="modal-container">
+    <div class="modal-background"></div>
+    <div class="modal-edit-password">
+    <div class="modal-header">
+    <span class="material-symbols-outlined">
+    lock
+    </span>
+    <h3 class="titulo">
+        Defina sua senha
+    </h3>
+    </div>
+    
+    <form class="form-modal" action="" method="post">
+
+    <div class="box erro">
+    <button class="visibility-password">
+    <p class="material-symbols-outlined">
+    visibility_off
+    </p>
+    </button>
+    <input type="password" name="senha_atual" id="senha_atual" placeholder="Senha atual">
+    <span></span>
+    </div>
+    <div class="box">
+    <button class="visibility-password">
+    <p class="material-symbols-outlined">
+    visibility_off
+    </p>
+    </button>
+    <input type="password" name="nova_senha" id="nova_senha" placeholder="Nova senha">
+    <span></span>
+    </div>
+
+    <div class="box">
+    <button class="visibility-password">
+    <p class="material-symbols-outlined">
+    visibility_off
+    </p>
+    </button>
+    <input type="password" name="confirmar_nova_senha" id="confirmar_nova_senha" placeholder="Confirmar nova senha">
+    <span></span>
+    </div>
+    
+    <div class="box-btn">
+    <button class="cancelar">
+    Cancelar
+    </button>
+    <input type="submit" value="Salvar Senha">
+    </div>
+    </form>
+    </div>
+    </div>
+    </main>
+</body>
+</html>
