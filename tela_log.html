@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="br-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,300;1,400;1,600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="src/css/tela_log.css">
+
+    <title>Log de Acesso</title>
+
+</head>
+
+<body>
+    <header>
+        <header class="cabecalho">
+            <a href="dashboard_adm.html"><img class="logo" src="src/img/logo.svg" alt="logo Conexão Estagios"></a>
+            <a href="dashboard_adm.html" class="btn-sair">
+                Sair
+            </a>
+            </header>
+    </header>
+
+    <main>
+    <h1>Registro de Logs</h1>
+    
+    <form class="form" action="" method="post">
+    <div class="box">
+    <input type="search" name="pesquisa" id="pesquisa" placeholder="Pesquisar">
+    </div>
+    <div class="box-data">
+    <label for="data">Data:</label>
+    <input type="text" name="data" id="data" placeholder="00/00/000">
+    </div>
+    <input class="btn-pesquisar" type="submit" value="Pesquisar">
+    </form>
+    <div class="body-table">
+    <table>
+    <thead>
+    <tr>
+    <th>Id</th>
+    <th>Id.Usuario</th>
+    <th>Usuario</th>
+    <th>Data e Hora</th>
+    <th>IP</th>
+    <th>2FA</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>1</td>
+    <td>Usuario 1</td>
+    <td>Ana</td>
+    <td>2024-05-16 10:30:00</td>
+    <td>192.168.0.1</td>
+    <td>Sn</td>
+    <tr>
+    <td>2</td>
+    <td>Usuario 2</td>
+    <td>Marcos</td>
+    <td>2024-05-20 10:30:00</td>
+    <td>192.168.0.3</td>
+    <td>Sn</td>
+    </tr>
+    <tr>
+    <td>3</td>
+    <td>Usuario 3</td>
+    <td>Rafael</td>
+    <td>2024-05-20 10:30:00</td>
+    <td>192.168.0.3</td>
+    <td>Sn</td>
+    </tr>
+    <tr>
+    <td>4</td>
+    <td>Usuario 4</td>
+    <td>Lucas</td>
+    <td>2024-05-20 10:30:00</td>
+    <td>192.168.0.3</td>
+    <td>Sn</td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Conexão Estagios</p>
+    </footer>
+</body>
+</html>

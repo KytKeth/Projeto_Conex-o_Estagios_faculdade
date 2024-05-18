@@ -26,12 +26,9 @@ let inputEstado = document.getElementById('estado')
 let inputEndereco = document.getElementById('endereco')
 let form = document.querySelector('form')
 
-
 form.addEventListener('submit', (e) =>{
     e.preventDefault();
 })
-
-
 // Input CEP
 inputCEP.addEventListener('keyup', (e) =>{
     if(inputCEP.value.length < 10){
@@ -46,8 +43,6 @@ inputCEP.addEventListener('keyup', (e) =>{
     
 })
 
-
-
 const setErro = (input, msg) =>{
     const formItem = input.parentElement;
     const textMsg = document.querySelector('span')
@@ -55,25 +50,3 @@ const setErro = (input, msg) =>{
     textMsg.innerText = msg;
     formItem.className = "box erro";
 }
-
-
-//   const cep = inputCEP.value;
-//     console.log(cep)
-//     if(cep){
-//         const URL = `https://viacep.com.br/ws/${cep}/json/`;
-//         try{
-//             const resp = await(fetch(URL));
-//             const obj = await resp.json();
-
-//             if(resp.status === 200){
-//             inputComplemento.value = obj.complemento
-//             inputBairro.value = obj.bairro
-//             inputCidade.value = obj.localidade
-//             inputEstado.value = obj.uf
-//             }else{
-//                 console.error('Erro ao buscar o CEP:', resp.status)
-//             }
-//         }catch (error){
-//             console.error('Erro na API:', error);
-//         }
-//     }

@@ -11,6 +11,14 @@ body{
     
 }
 
+body.block{
+    overflow-y: hidden;
+}
+
+body.blocked{
+    overflow-y: hidden;
+}
+
 :root{
     ---azul_escuro:#3E3C4C;
     ---azul_bebe:#9BF2FE;
@@ -163,7 +171,14 @@ body{
 .content .form .box{
     position: relative;
     margin-bottom: 10px;
-
+    
+}
+.content .form .box #input-Resposta{
+    margin-top: 30px;
+    font-size: 17px;
+}
+.content .form .box #input-Resposta::placeholder{
+    font-size: 16px;
 }
 .content .form .box input{
     position: relative;
@@ -211,7 +226,7 @@ body{
     justify-content: end;
 }
 
-.content .form .btn-forms button{
+.content .form .btn-forms button, .content .form .btn-forms .button{
     width: 20%;
     height: 45px;
     border-radius: 10px;
@@ -224,8 +239,17 @@ body{
 }
 
 .content .form .btn-forms .cancelar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: var(---azul_escuro);
     color: var(---background-body);
+    font-family: var(---font-principal);
+    transition: .2s all;
+    width: 20%;
+    border-radius: 10px;
+    font-weight: bold;
+    text-decoration: none;
 }
 
 .content .form .btn-forms .salvar{
@@ -247,17 +271,17 @@ body{
 }
 /* Fim Hover focus button */
 
-
+/* Modal Password */
 .content .modal-container{
     display: none;
     position: fixed;
     width: 100%;
+    z-index: 4;
 }
 .content .modal-background{
     width: 100%;
     height: 100vh;
     background-color: #0000009c;
-    width: 100%;
 }
 
 .content .modal-edit-password{
@@ -265,9 +289,9 @@ body{
     flex-direction: column;
     row-gap: 20px;
     position: fixed;
-    top: 20%;
-    left: 37%;
-    transform: translate(-20% -37%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: #fff;
     width: 400px;
     border-radius: 10px;
@@ -313,6 +337,10 @@ body{
     cursor: pointer;
     border: none;
     border-radius: 50%;
+    outline: none;
+}
+.content .modal-edit-password .form-modal .box .visibility-password p{
+    pointer-events: none;
 }
 .content .modal-edit-password .form-modal .box-btn{
     width: 100%;
@@ -340,12 +368,13 @@ body{
     background-color: #3E3C4C;
     color: var(---background-body);
     font-weight: 500;
-    font-size: 16px;
+    font-size: 14px;
     outline: none;
     border: none;
     border-radius: 5px;
     transition: .4s all;
     cursor: pointer;
+    text-transform: uppercase;
 }
 
 .content .modal-edit-password .form-modal .box-btn input:hover{
@@ -374,6 +403,154 @@ body{
 }
 
 
+/* Modal Email */
+.content .modal-container-email{
+    display: none;
+    position: fixed;
+    width: 100%;
+    z-index: 4;
+}
+.content .modal-background-email{
+    width: 100%;
+    height: 100vh;
+    background-color: #0000009c;
+    width: 100%;
+}
+
+.content .modal-edit-email{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    width: 400px;
+    border-radius: 10px;
+}
+.content .modal-edit-email .paragrafo{
+    width: 100%;
+    padding: 20px;
+    font-family: var(---font-principal);
+    font-size: 15px;
+}
+
+.content .modal-edit-email .modal-header{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border-bottom: 1px solid var(---azul_escuro);
+    padding: 20px;
+}
+.content .modal-edit-email .modal-header span{
+    display: flex;
+    color: var(---azul_bebe);
+}
+.content .modal-edit-email .modal-header .titulo{
+    font-family: var(---font-principal);
+    color: var(---azul_escuro);
+    font-weight: 600;
+}
+.content .modal-edit-email .form-modal-email{
+    display: flex;
+    flex-direction: column;
+    row-gap: 60px;
+    padding: 20px;
+}
+.content .modal-edit-email .form-modal-email .box{
+    position: relative;
+    width: 100%;
+    height: 30px;
+}
+.content .modal-edit-email .form-modal-email .box .visibility-password-email{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-color: transparent;
+    top: -3px;
+    right: 1px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    outline: none;
+}
+.content .modal-edit-email .form-modal-email .box .visibility-password-email p{
+    pointer-events: none;
+}
+.content .modal-edit-email .form-modal-email .box-btn{
+    width: 100%;
+    display: flex;
+    padding: 0 10px;
+    justify-content: space-between;
+}
+.content .modal-edit-email .form-modal-email .box-btn .cancelar{
+    width: 100px;
+    height: 35px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: none;
+    color: var(---azul_escuro);
+    font-family: var(---font-principal);
+    font-weight: 700;
+    font-size: 16px;
+    transition: .5s all;
+    cursor: pointer;
+}
+
+.content .modal-edit-email .form-modal-email .box-btn input{
+    width: 140px;
+    height: 35px;
+    background-color: #3E3C4C;
+    color: var(---background-body);
+    font-weight: 500;
+    font-size: 14px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    transition: .4s all;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.content .modal-edit-email .form-modal-email .box-btn input:hover{
+    background-color: #3e3c4c9c;
+}
+
+.content .modal-edit-email .form-modal-email .box-btn .cancelar:hover{
+    background-color: #ababab;
+}
+
+
+.content .modal-edit-email .form-modal-email .box input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-bottom: 2px solid var(---azul_escuro);
+    outline: none;
+    font-size: 16px;
+    padding: 0 30px 0 0;
+}
+
+
+/* Funcionalidade */
+.content .modal-container-email.show{
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 .box span{
     position: relative;
@@ -381,27 +558,15 @@ body{
     font-family: var(---font-principal);
     display: none;
     font-size: 14px;
- }
- 
- .box.erro span{
-     color: red;
-     display: block;
-     font-weight: 600;
- }
+}
 
- .content .form .box span{
-    position: relative;
-    bottom: 0px;
-    font-family: var(---font-principal);
-    display: none;
-    font-size: 14px;
- }
- 
- .content .form .box.erro span{
-     color: red;
-     display: block;
-     font-weight: 600;
- }
+.box.erro span{
+    color: red;
+    display: block;
+    font-weight: 600;
+}
+
+
 
 
 
@@ -421,6 +586,12 @@ body{
     .content .form .box input{
         width: 100%;
     }
+    .content .modal-edit-password{
+        width: 370px;
+    }
+    .content .modal-edit-email{
+        width: 370px;
+    }
     
 }
 
@@ -436,6 +607,10 @@ body{
     }
     .content .form .box input{
         width: 100%;
+    }
+
+    .content .modal-edit-password{
+        left: 50%;
     }
 }
 

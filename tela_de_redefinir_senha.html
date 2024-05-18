@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="src/css/tela_de_login.css">
+    <link rel="stylesheet" href="src/css/tela_de_redefinir_senha.css">
     <title>Oportunidades - Conexão estágios</title>
-    <script src="src/JS/tela_de_login.js" defer></script>
+    <script src="src/JS/tela_de_redefinir_senha.js" defer></script>
 </head>
 <body>
     <main class="content">
@@ -21,24 +21,19 @@
     <form action="" method="post">
 
     <div class="box">
-    <input type="text" name="username" id="username" class=" text" placeholder="Entrar com username">
+    <input type="password" name="redefinir_senha" id="redefinir_senha" placeholder="Senha">
     <span>O email é Obrigatório</span>
     </div>
 
     <div class="box">
-    <input type="password" name="senha" id="senha"
-    class="senha required" placeholder="Senha">
+    <input type="password" name="confirmar_senha" id="confirmar_senha"
+     placeholder="Confirmar Senha">
     <span>A senha é Obrigatório</span>
     </div>
 
     <div class="box">
-    <a class="minha-senha" href="">Esqueci minha senha</a>
-    <input class="submit" type="submit" value="Entrar">
+    <input class="submit" type="submit" value="Redefinir senha">
 
-    <div class="text">
-        <p>Ainda não tem conta ?</p>
-        <a href="tela_de_cadastro.html">cadastre-se</a>
-    </div>
     </div>
     </form>
     </div>

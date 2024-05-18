@@ -5,7 +5,6 @@ const menuMobileLeft = () =>{
     const modalSidebar = document.querySelector('.modal-sidebar')
     const btnClose = document.querySelector('.btn-close')
 
-    console.log(menuMobile)
 
     document.addEventListener('click', (e) =>{
         const el = e.target;
@@ -21,4 +20,3 @@ const menuMobileLeft = () =>{
     })
 }
 menuMobileLeft();
-

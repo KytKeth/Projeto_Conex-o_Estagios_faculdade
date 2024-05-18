@@ -8,12 +8,16 @@
     list-style: none;
 }
 
+
 :root{
     ---azul_escuro:#3E3C4C;
     ---azul_bebe:#9BF2FE;
     ---background-body:#E0E0E0;
     ---font-principal: "Assistant", sans-serif; 
 }
+
+
+
 
 html{
     scroll-behavior: smooth;
@@ -26,9 +30,93 @@ body.hide{
     overflow: hidden;
 }
 
+.nav-acessibilidade{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 88px;
+    top: 0;
+    z-index: 10;
+    position: fixed;
+    width: 100%;
+    background-color: var(---azul_escuro);
+    border-bottom: 1px solid var(---azul_bebe);
+}
+
+.nav-acessibilidade .links-menu ul{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.nav-acessibilidade .links-menu ul li{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.nav-acessibilidade .links-menu ul li span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(---font-principal);
+    background-color: var(---azul_bebe);
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 50%;
+    color: var(---azul_escuro);
+    font-size: 14px;
+}
+
+.nav-acessibilidade .links-menu ul li .atalho{
+    font-family: var(---font-principal);
+    color: var(---background-body);
+    font-weight: 600;
+}
+
+.nav-acessibilidade .fontes-contraste{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.nav-acessibilidade .fontes-contraste .fonts{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(---background-body);
+    font-family: var(---font-principal);
+    font-weight: 600;
+}
+.nav-acessibilidade .fontes-contraste .fonts button{
+    padding: 5px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background-color: var(---azul_bebe);
+    color: var(---azul_escuro);
+    font-weight: 600;
+}
+.nav-acessibilidade .fontes-contraste .contraste{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: var(---font-principal);
+    color: var(---background-body);
+    font-weight: 600;
+}
+.nav-acessibilidade .fontes-contraste .contraste button{
+    display: flex;
+    color: var(---background-body);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.nav-acessibilidade .fontes-contraste .contraste button span{
+    pointer-events: none;
+}
+
 .cabecalho{
     display: flex;
-    position: relative;
     justify-content: space-between;
     align-items: center;
     background-color: var(---azul_escuro);
@@ -36,10 +124,7 @@ body.hide{
     height: 9vh;
     width: 100%;
     text-decoration: none;
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
+    margin-top: 43px;
     text-shadow: 0px -1px 0px 3px #7c798e;
 }
 
@@ -49,7 +134,7 @@ body.hide{
     text-decoration: none;
     font-size: 14px;
     padding: 10px;
-    background-color: var(---azul-bebe);
+    background-color: var(---azul_bebe);
     border-radius: 5px;
     color: var(---azul_escuro);
     font-weight: 900;
@@ -60,6 +145,19 @@ body.hide{
 .cabecalho .logo{
     width: 100%;
 }
+
+.cabecalho .logo.dark{
+    display: none;
+}
+
+.cabecalho .logo-black{
+    width: 81%;
+    display: none;
+}
+.cabecalho .logo-black.light{
+    display: block;
+}
+
 
 .cabecalho .menu{
     display: flex;
@@ -99,9 +197,6 @@ body.hide{
 /* Fim Hover e focus */
 
 
-.content{
-    margin-top: 40px;
-}
 
 .content .cabecalho-container{
     display: flex;
@@ -113,7 +208,7 @@ body.hide{
     margin-bottom: 8em;
 }
 
-.content .cabecalho-container p, .content .cabecalho-container h2{
+.content .cabecalho-container .habilidade-skill, .content .cabecalho-container h2{
     margin-bottom: 10px;
     font-family: var(---font-principal);
     color: var(---background-body);
@@ -124,7 +219,7 @@ body.hide{
     padding: 6px 20px;
     border-radius: 20px;
     font-family: var(---font-principal);
-    border: 2px solid var(---azul-bebe);
+    border: 2px solid var(---background-body);
     color: var(---background-body);
     font-weight: bold;
     cursor: pointer;
@@ -285,7 +380,7 @@ body.hide{
     width: 90%;
     height: 50px;
     color: var(---azul_escuro);
-    background-color: var(---azul-bebe);
+    background-color: var(---azul_bebe);
     border: none;
     border-radius: 10px;
     font-weight: bold;
@@ -337,11 +432,16 @@ body.hide{
     gap: 10px;
 }
 
-.footer .redes span img{
+.footer .redes span .footer-img{
     width: 25px;
 }
 /* Fim Footer */
 
+.footer .redes span .footer-img.dark{
+    filter: brightness(0%) contrast(1000%);
+-webkit-filter: brightness(0%) contrast(1000%);
+-moz-filter: brightness(0%) contrast(1000%);
+}
 
 .content .sidebar-menu{
     display: none;
@@ -356,6 +456,7 @@ body.hide{
 @media only screen and (min-width: 320px ) and (max-width: 480px) {
     .cabecalho{
         padding: 0 10px;
+
     }
 
     .cabecalho .menu{
@@ -363,7 +464,7 @@ body.hide{
     }
 
     .cabecalho .logo{
-        width: 80%;
+        width: 50%;
     }
     .cabecalho .button-entrar{
         padding: 4px;
@@ -373,6 +474,20 @@ body.hide{
 
     .righ-container .menu-mobile{
         display: flex;
+    }
+
+    .nav-acessibilidade{
+        justify-content: center;
+    }
+    
+
+    .nav-acessibilidade .links-menu{
+        display: none;
+    }
+
+
+    .content{
+        margin-top: 0;
     }
 
 
@@ -542,6 +657,10 @@ body.hide{
         display: flex;
     }
 
+    
+    .nav-acessibilidade .links-menu{
+        display: none;
+    }
 
     .content .detalhes-vaga{
         margin-left: 0;
@@ -686,3 +805,21 @@ body.hide{
 }
 
  /* Fim Resposividade */
+
+
+
+ /* DarkMode */
+
+/* Background-color com azul-escuro trocadas para branco */
+.nav-acessibilidade.light, .cabecalho.light, .content .cabecalho-container.light, .footer.light, .content .sidebar-menu.light, .content .sidebar-menu.open.light, .content .detalhes-vaga .button-candidatar.light{
+    background-color: #fff;
+    color: var(---azul_escuro);
+    border-color: var(---azul_escuro);
+ }
+
+ /* color com claro trocadas para azul-escuro */
+
+.nav-acessibilidade .fontes-contraste .fonts.dark, .nav-acessibilidade .fontes-contraste .contraste.dark, .content .cabecalho-container, .content .cabecalho-container .habilidade-skill.dark, .content .cabecalho-container .titulo.dark, .content .cabecalho-container .skills.dark, .content .detalhes-vaga .button-candidatar.dark, .footer.dark, .nav-acessibilidade .links-menu ul li .atalho.dark, .cabecalho .menu ul li .menu-link.dark{
+    color: var(---azul_escuro);
+    border-color: var(---azul_escuro);
+}

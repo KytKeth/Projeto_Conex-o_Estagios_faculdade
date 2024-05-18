@@ -9,18 +9,49 @@
     <script src="src/JS/tela-vagas-cadastradas.js" defer></script>
 </head>
 <body>
-    <header class="cabecalho">
-    <a href="index.html"><img class="logo" src="src/img/logo.svg" alt="logo Conexão Estagios"></a>
 
-    <nav class="menu">
+    <!-- Acessibilidade -->
+   <div class="nav-acessibilidade">
+
+    <div class="links-menu">
     <ul>
-    <li><a href="">Oportunidades Abertas</a></li>
-    <li><a href="">Vagas Abertas</a></li>
-    <li><a href="#alerta_vagas">Alerta de Vagas</a></li>
+    <li><span>C</span><a class="atalho" href="#content">Ir para o conteúdo</a></li>
+    <li><span>M</span><a class="atalho" href="#menu">Ir para o menu</a></li>
+    <li><span>R</span><a class="atalho" href="#footer">Ir para o rodapé</a></li>
+    </ul>
+    </div>
+    <div class="fontes-contraste">
+    <div class="fonts">
+    <p>Fontes</p>
+    <button class="menos">
+    A-
+    </button>
+    <button class="mais">
+    A+
+    </button>
+    </div>
+    <div class="contraste">
+    <p>Contraste</p>
+    <button class="btn-contraste" title="Contraste">
+    <span class="material-symbols-outlined">
+    contrast
+    </span>
+    </button>
+    </div>
+    </div>
+   </div>
+   
+    <header class="cabecalho">
+    <a href="tela_de_vagas.html"><img class="logo" src="src/img/logo.svg" alt="logo Conexão Estagios"></a>
+    <a href="tela_de_vagas.html"><img class="logo-black" src="src/img/Logo_black.svg" alt="logo Conexão Estagios"></a>
+    <nav class="menu" id="menu">
+    <ul>
+    <li><a class="menu-link" href="tela_de_vagas.html">Vagas Abertas</a></li>
+    <li><a class="menu-link" href="#alerta_vagas">Alerta de Vagas</a></li>
     </ul>
     </nav>
     <div class="righ-container">
-    <a class="button-entrar" href="">Entrar</a>
+    <a class="button-entrar" href="tela_de_login.html">Entrar</a>
     <button class="menu-mobile">
     <span class="material-symbols-outlined">
     menu
@@ -28,9 +59,9 @@
     </button>
     </div>
     </header>
-    <main class="content">
+    <main class="content" id="content">
     <section class="cabecalho-container">
-    <p>skill</p>
+    <p class="habilidade-skill">skill</p>
     <h2 class="titulo">Titulo da Vaga</h2>
     <div class="skills">skill</div>
     </section>
@@ -44,16 +75,15 @@
         </span>
         </button>
         <nav class="nav-menu">
-        <a href="#">Oportunidades Abertas</a>
-        <a href="#">Vagas Abertas</a>
-        <a href="#">Alerta de vagas</a>
-        <a href="#">Fazer Cadastro</a>
-        <a href="#">Entrar</a>
+        <a href="tela_de_vagas.html">Vagas Abertas</a>
+        <a href="#alerta_vagas">Alerta de vagas</a>
+        <a href="tela_de_cadastro.html">Fazer Cadastro</a>
+        <a href="tela_de_login.html">Entrar</a>
         </nav>
         <div class="redes">
-        <span><img src="src/img/instagram 1.svg" alt=""></span>
-        <span><img src="src/img/linkedin 1.svg" alt=""></span>
-        <span><img src="src/img/youtube 1.svg" alt=""></span>
+        <span><img src="src/img/instagram 1.svg" alt="logo instagram"></span>
+        <span><img src="src/img/linkedin 1.svg" alt="logo linkedin"></span>
+        <span><img src="src/img/youtube 1.svg" alt="logo youtube"></span>
         </div>
         </aside>
 
@@ -103,12 +133,12 @@
     </main>
 
      <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" id="footer">
     <p>&copy; 2014 Grupo10, Todos os direitos reservados</p>
     <div class="redes">
-    <span><img src="src/img/instagram 1.svg" alt=""></span>
-    <span><img src="src/img/linkedin 1.svg" alt=""></span>
-    <span><img src="src/img/youtube 1.svg" alt=""></span>
+    <span><img class="footer-img" src="src/img/instagram 1.svg" alt="logo instagram"></span>
+    <span><img class="footer-img" src="src/img/linkedin 1.svg" alt="logo linkedin"></span>
+    <span><img class="footer-img" src="src/img/youtube 1.svg" alt="logo youtube"></span>
     </div>
     </footer>
 </body>

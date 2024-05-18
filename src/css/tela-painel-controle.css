@@ -30,6 +30,19 @@ body{
     width: 100%;
 }
 
+.cabecalho .btn-sair{
+    position: absolute;
+    right: 30px;
+    padding: 8px 16px;
+    background-color: var(---azul_bebe);
+    border-radius: 5px;
+    font-family: var(---font-principal);
+    color: var(---azul_escuro);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
 .content{
     display: flex;
     justify-content: center;

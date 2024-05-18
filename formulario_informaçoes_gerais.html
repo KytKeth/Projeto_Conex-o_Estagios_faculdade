@@ -47,6 +47,7 @@
     </div>
 
     <div class="box">
+    <h3 class="titulos">Data de nascimento</h3>
     <input type="date" name="data-nasc" id="data-nasc">
     <span></span>
     </div>
@@ -73,7 +74,7 @@
     </div>
 
     <div class="box">
-    <button class="btn-edit-password" title="editar">
+    <button type="button" class="btn-edit-password" title="editar">
     <p class="material-symbols-outlined">
     edit
     </p>
@@ -82,6 +83,24 @@
     <label for="senha">Senha</label>
     <span></span>
     </div>
+
+
+    <div class="box">
+    <h3 class="titulos">Pergunta de Segurança</h3>
+    <select class="select" name="ask-usuario" id="ask-usuario">
+    <option class="titulo-opcao">Selecione uma pergunta</option>
+    <option value="nome-mae">Qual nome da sua mãe ?</option>
+    <option value="data-nascimento">Qual a data do seu nascimento ?</option>
+    <option value="qual-cep">Qual o CEP do seu endereço ?</option>
+    <div class="box">
+    <input type="text" name="inputResposta" id="input-Resposta" placeholder="Digite sua Resposta">
+    <label for="ask-usuario"></label>
+    <span></span>
+    </div>
+    </select>
+
+    </div>
+    
 
     <div class="box">
     <select class="select" name="estado-civil" id="estado-civil">
@@ -97,7 +116,7 @@
 
     <h3 class="titulos">Contatos</h3>
     <div class="box">
-    <button class="btn-edit-email" title="editar">
+    <button type="button" class="btn-edit-email" title="editar">
     <p class="material-symbols-outlined">
     edit
     </p>
@@ -123,9 +142,9 @@
     </div>
 
     <div class="btn-forms">
-    <button class="cancelar" type="submit" name="cancelar">
+    <a href="dashboard_candidato.html" class="cancelar" name="cancelar">
     Cancelar
-    </button>
+    </a>
     <button class="salvar" type="submit" name="salvar">
     Salvar
     </button>
@@ -133,7 +152,6 @@
     </form>
     </section>
 
-    
     <div class="modal-container">
     <div class="modal-background"></div>
     <div class="modal-edit-password">
@@ -148,8 +166,9 @@
     
     <form class="form-modal" action="" method="post">
 
-    <div class="box erro">
-    <button class="visibility-password">
+    <div class="box">
+
+    <button type="button" class="visibility-password" id="senha_atual_btn">
     <p class="material-symbols-outlined">
     visibility_off
     </p>
@@ -157,8 +176,9 @@
     <input type="password" name="senha_atual" id="senha_atual" placeholder="Senha atual">
     <span></span>
     </div>
+
     <div class="box">
-    <button class="visibility-password">
+    <button type="button" class="visibility-password" id="nova_senha_btn">
     <p class="material-symbols-outlined">
     visibility_off
     </p>
@@ -168,7 +188,7 @@
     </div>
 
     <div class="box">
-    <button class="visibility-password">
+    <button type="button" class="visibility-password" id="confirmar_nova_senha_btn">
     <p class="material-symbols-outlined">
     visibility_off
     </p>
@@ -178,14 +198,61 @@
     </div>
     
     <div class="box-btn">
-    <button class="cancelar">
+    <button type="button" class="cancelar btn-modal-password">
     Cancelar
     </button>
-    <input type="submit" value="Salvar Senha">
+    <input class="btn-salva-senha" type="submit" value="Salvar Senha">
     </div>
     </form>
     </div>
     </div>
+
+
+
+
+
+
+
+    <div class="modal-container-email">
+        <div class="modal-background-email"></div>
+        <div class="modal-edit-email">
+        <div class="modal-header">
+        <h3 class="titulo">
+            Defina seu email
+        </h3>
+        </div>
+        <p class="paragrafo">Após a alteração de e-mail será necessário reautenticar no portal.
+        </p>
+        <form class="form-modal-email" action="" method="post">
+    
+        <div class="box">
+        <input type="email" name="novo_email" id="novo_email" placeholder="Novo e-mail">
+        <span></span>
+        </div>
+        <div class="box">
+        <input type="email" name="confirmar_novo_email" id="confirmar_novo_email" placeholder="Confirmar novo e-mail">
+        <span></span>
+        </div>
+    
+        <div class="box">
+        <button type="button" class="visibility-password-email">
+        <p class="material-symbols-outlined">
+        visibility_off
+        </p>
+        </button>
+        <input type="password" name="senha_padrao" id="senha_padrao" placeholder="Senha">
+        <span></span>
+        </div>
+        
+        <div class="box-btn">
+        <button type="button" class="cancelar btn-modal-email">
+        Cancelar
+        </button>
+        <input type="submit" value="Salvar Email">
+        </div>
+        </form>
+        </div>
+        </div>
     </main>
 </body>
 </html>

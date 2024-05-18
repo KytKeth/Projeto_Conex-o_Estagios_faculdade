@@ -8,6 +8,8 @@ const inputEstadoCivil = document.getElementById('estado-civil');
 const inputEmail = document.getElementById('email');
 const inputTel = document.getElementById('celular');
 const form = document.querySelector('form');
+const inputResposta = document.getElementById('input-Resposta')
+const askUsuario = document.getElementById('ask-usuario')
 
 
 form.addEventListener('submit', (e) =>{
@@ -16,7 +18,20 @@ form.addEventListener('submit', (e) =>{
     inputSobreNomeValidate();
     inputCpfValidate();
     inputTelefoneValidate();
+    inputRespostaValidate();
 })
+
+
+const inputRespostaValidate = () =>{
+    inputResposta.addEventListener('keyup', () =>{
+        if(inputResposta.value === "") {
+            setErro(inputResposta, "Pergunta e resposta são obrigatório")
+        }else{
+            const formItem = inputResposta.parentElement;
+            formItem.className = "box"
+        }
+    })
+}
 
 // Input Nome
 const inputNomeValidate = () =>{
@@ -39,6 +54,24 @@ const inputSobreNomeValidate = () =>{
         const formItem = inputSobreNome.parentElement;
         formItem.className = "box";
     }
+}
+
+
+// Input Data
+const inputDataNascValidate = () =>{
+    inputDataNasc.addEventListener('input', () =>{
+        criaMascaraData(inputDataNasc);
+        if(inputDataNasc.value === ""){
+            setErro(inputDataNasc, "Digite sua data de nascimento")
+        }else if(inputDataNasc.value.length < 10){
+        setErro(inputDataNasc, "Data de nascimento invalida")
+        inputDataNasc.value = inputDataNasc.value.slice(0, 10)
+        }else{
+            const formItem = inputDataNasc.parentElement;
+            formItem.className = "box";
+        }
+    }) 
+    
 }
 // Input CPF
 const inputCpfValidate = () =>{
@@ -80,6 +113,14 @@ inputTel.addEventListener('keyup', (e) =>{
 
 // Funções Globais
 
+
+const criaMascaraData = (input) =>{
+    const valor = input.value.replace(/\D/g, "");
+    if(valor.length === 8){
+        const dataFormato = `${valor.slice(0,2)}/${valor.slice(2, 4)}/${valor.slice(4)}`;
+        input.value = dataFormato;
+    }
+}
 
 const formateCPF = (input) =>{
     let v = input.value.replace(/\D/g, '');
@@ -126,17 +167,217 @@ const setErro = (input, msg) =>{
     textMsg.innerText = msg;
     formItem.className = "box erro"
 }
+const errorBorderRed = (input) =>{
+        input.style.borderColor = "red"
+}
+const borderDefault = (input) =>{
+    input.style.borderColor = "#3E3C4C";
+}
+
+
+
+// Modais dos botoes de editar 
+
+const modalContainer = document.querySelector('.modal-container')
+const btnEditPassword = document.querySelector('.btn-edit-password')
+const modalEditPassword = document.querySelector('.modal-edit-password')
+const btnModalPassword = document.querySelector('.btn-modal-password')
+
+const modalContainerEmail = document.querySelector('.modal-container-email')
+const btnEditEmail = document.querySelector('.btn-edit-email')
+const modalEditEmail = document.querySelector('.modal-edit-email')
+const btnModalEmail = document.querySelector('.btn-modal-email')
+
+const inputSenhaAtual = document.getElementById('senha_atual')
+const inputNovaSenha = document.getElementById('nova_senha')
+const inputConfirmarNovaSenha = document.getElementById('confirmar_nova_senha')
+
+const inputNovoEmail = document.getElementById('novo_email')
+const inputConfirmarNovoEmail = document.getElementById('confirmar_novo_email')
+const inputSenhaPadrao = document.getElementById('senha_padrao');
+
+const btnSalvarSenha = document.querySelector('.btn-salva-senha')
+
 
 
 
 const formModal = document.querySelector('.form-modal').addEventListener('submit', (e) =>{
     e.preventDefault();
+    inputSenhaAtualValidate();
+    inputNovaSenhaValidate();
+    inputConfirmarNovaSenhaValidate()
 })
 
-const btnEditPassword = document.querySelector('.btn-edit-password')
-const modalContainer = document.querySelector('.modal-container')
 
-btnEditPassword.addEventListener('click', (e) =>{
+
+const inputSenhaAtualValidate = () =>{
+   inputSenhaAtual.addEventListener('keyup', () =>{
+       if(inputSenhaAtual.value === ""){
+        errorBorderRed(inputSenhaAtual)
+        setErro(inputSenhaAtual, "É preciso colocar a senha!")
+    }else if(inputSenhaAtual.value.length < 8){
+        errorBorderRed(inputSenhaAtual)
+        setErro(inputSenhaAtual, "Use 8 caracters ou mais")
+    }
+    else{
+        borderDefault(inputSenhaAtual)
+        const formItem = inputSenhaAtual.parentElement;
+        formItem.className = "box"
+    }
+   })
+}
+
+const inputNovaSenhaValidate = () =>{
+    inputNovaSenha.addEventListener('keyup', () =>{
+        
+    if(inputNovaSenha.value === ""){
+        errorBorderRed(inputNovaSenha)
+        setErro(inputNovaSenha, "É preciso colocar a senha!")
+    }else if(inputNovaSenha.value.length < 8){
+        errorBorderRed(inputNovaSenha)
+        setErro(inputNovaSenha, "Use 8 caracters ou mais")
+    }else if(inputNovaSenha.value === inputSenhaAtual.value){
+        errorBorderRed(inputNovaSenha)
+        setErro(inputNovaSenha, "senha nova não pode ser igual anterior")
+    }
+    else{
+        borderDefault(inputNovaSenha)
+        const formItem = inputNovaSenha.parentElement;
+        formItem.className = "box"
+    }
+    })
+}
+
+const inputConfirmarNovaSenhaValidate = () =>{
+    inputConfirmarNovaSenha.addEventListener('keyup', () =>{
+        if(inputConfirmarNovaSenha.value === ""){
+            errorBorderRed(inputConfirmarNovaSenha)
+            setErro(inputConfirmarNovaSenha, "É preciso confirmar a senha")
+        }else if(inputConfirmarNovaSenha.value !== inputNovaSenha.value){
+            errorBorderRed(inputConfirmarNovaSenha)
+            setErro(inputConfirmarNovaSenha, "As senhas devem ser iguais")
+        }else{
+            borderDefault(inputConfirmarNovaSenha)
+            const formItem = inputConfirmarNovaSenha.parentElement;
+            formItem.className = "box"
+        }
+    })
+}
+
+const formModalEmail = document.querySelector('.form-modal-email').addEventListener('submit', (e) =>{
     e.preventDefault();
-    modalContainer.classList.add('show')
+    inputNovoEmailValidate();
+    inputConfirmarNovoEmailValidate();
+    inputSenhaPadraoValidate();
 })
+
+const inputNovoEmailValidate = () =>{
+    inputNovoEmail.addEventListener('keyup', (e) =>{
+        if(inputNovoEmail.value === ""){
+            errorBorderRed(inputNovoEmail)
+            setErro(inputNovoEmail, "É preciso colocar um e-mail!")
+        }else{
+            borderDefault(inputNovoEmail)
+            const formItem = inputNovoEmail.parentElement;
+            formItem.className = "box";
+        }
+        
+    })
+ 
+}
+
+const inputConfirmarNovoEmailValidate = () =>{
+    inputConfirmarNovoEmail.addEventListener('keyup', () =>{
+        if(inputConfirmarNovoEmail.value === ""){
+            errorBorderRed(inputConfirmarNovoEmail)
+            setErro(inputConfirmarNovoEmail, "É preciso confirmar o e-mail!")
+        }else if(inputConfirmarNovoEmail.value !== inputNovoEmail.value){
+            errorBorderRed(inputConfirmarNovoEmail)
+            setErro(inputConfirmarNovoEmail, "Os e-mails devem ser iguais")
+        }else{
+            borderDefault(inputConfirmarNovoEmail)
+            const formItem = inputConfirmarNovoEmail.parentElement;
+            formItem.className = "box";
+        }
+    })
+}
+
+const inputSenhaPadraoValidate = () =>{
+   inputSenhaPadrao.addEventListener('keyup', () =>{
+    if(inputSenhaPadrao.value === ""){
+        errorBorderRed(inputSenhaPadrao)
+        setErro(inputSenhaPadrao, "É preciso colocar a senha!")
+    }else if(inputSenhaPadrao.value.length < 8){
+        errorBorderRed(inputSenhaPadrao)
+        setErro(inputSenhaPadrao, "A senha precisa de, no mínimo, 8 caracteres")
+    }else{
+        borderDefault(inputSenhaPadrao)
+        const formItem = inputSenhaPadrao.parentElement;
+        formItem.className = "box";
+    }
+   })
+}
+
+
+const modalBtnPassword = () =>{
+    document.addEventListener('click', (e) =>{
+        const el = e.target;
+        if(el.classList.contains('btn-edit-password')){
+            modalContainer.classList.add('show')
+            document.body.classList.add('block')
+        }else if((!modalEditPassword.contains(el) || (el.classList.contains('btn-modal-password')))){
+            modalContainer.classList.remove('show')
+            document.body.classList.remove('block')
+        }
+    })
+}
+modalBtnPassword();
+
+const modalBtnEmail = () =>{
+    document.addEventListener('click', (e) =>{
+    const el = e.target;
+    if(el.classList.contains('btn-edit-email')){
+        modalContainerEmail.classList.add('show');
+        document.body.classList.add('blocked');
+    }else if((!modalEditEmail.contains(el) || (el.classList.contains('btn-modal-email')))){
+        modalContainerEmail.classList.remove('show')
+        document.body.classList.remove('blocked')
+    }
+  })
+}
+modalBtnEmail();
+
+
+const btnVisibility = document.querySelector('.visibility-password-email')
+const btnSenhaAtual = document.getElementById('senha_atual_btn')
+const btnNovaSenha = document.getElementById('nova_senha_btn')
+const btnConfirmarNovaSenha = document.getElementById('confirmar_nova_senha_btn')
+
+
+btnVisibility.addEventListener('click', () =>{
+    getTextPassword(inputSenhaPadrao)
+})
+
+btnSenhaAtual.addEventListener('click', () =>{
+    getTextPassword(inputSenhaAtual)
+})
+btnNovaSenha.addEventListener('click', () =>{
+    getTextPassword(inputNovaSenha)
+})
+
+btnConfirmarNovaSenha.addEventListener('click', () =>{
+    getTextPassword(inputConfirmarNovaSenha)
+})
+
+
+
+const getTextPassword = (input) =>{
+    if(input.type === "password"){
+        input.type = "text"
+    }else{
+        input.type = "password";
+    }
+}
+
+
+
