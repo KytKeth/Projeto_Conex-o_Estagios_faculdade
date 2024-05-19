@@ -12,7 +12,7 @@ document.addEventListener('click', (e) =>{
         document.body.classList.add('active')
         sideBarMenu.classList.add('open')
         modalSideBar.classList.add('show')
-    }else if(el.classList.contains('button-close') || (el.target !== sideBarMenu)){
+    }else if(el.classList.contains('button-close') || (!sideBarMenu.contains(el))){
         modalSideBar.classList.remove('show')
         sideBarMenu.classList.remove('open')
         document.body.classList.remove('active')

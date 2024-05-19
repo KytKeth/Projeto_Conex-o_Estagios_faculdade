@@ -12,7 +12,7 @@ const menuMobileLeft = () =>{
         sideBarMenu.classList.add('open')
         modalSidebar.classList.add('show')
         document.body.classList.add('hide')
-    }else if((el.classList.contains('btn-close') || (el.target !== sideBarMenu))){
+    }else if((el.classList.contains('btn-close') || (!sideBarMenu.contains(el)))){
         sideBarMenu.classList.remove('open')
         modalSidebar.classList.remove('show')
         document.body.classList.remove('hide')

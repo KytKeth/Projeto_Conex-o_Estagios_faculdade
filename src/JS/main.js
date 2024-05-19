@@ -37,8 +37,12 @@ const menuSidebarMobile = () =>{
     
     if(el.classList.contains('btn-menu')){
         sidebarMenu.classList.add('open')
-    }else if(el.classList.contains('btn-close') || (el.target !== btnClose)){
+        modalSidebar.classList.add('show')
+        document.body.classList.add('block')
+    }else if(el.classList.contains('btn-close') || (!sidebarMenu.contains(el))){
         sidebarMenu.classList.remove('open')
+        modalSidebar.classList.remove('show')
+        document.body.classList.remove('block')
     }
 
     })

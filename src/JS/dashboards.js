@@ -31,7 +31,7 @@ const closeBtn = document.querySelector('.close-btn');
 const nameEmail = document.querySelector('.name-email')
 const tabContents = document.querySelector('.tab-contents')
 const btnMenuMobile = document.querySelector('.btn-menu-mobile')
-
+const modalSidebar = document.querySelector('.modal-sidebar')
 
 document.addEventListener('click', (e) =>{
    const el = e.target;
@@ -41,22 +41,18 @@ document.addEventListener('click', (e) =>{
       nameEmail.classList.add('show')
       closeBtn.classList.add('show')
       tabContents.classList.add('margExpanded')
-   }else if(el.classList.contains('close-btn')){
+      modalSidebar.classList.add('open')
+
+   }else if((el.classList.contains('close-btn') || (!sidebar.contains(el)))){
       sidebar.classList.remove('expanded')
       closeBtn.classList.remove('show')
       btnMenu.classList.remove('hide')
       nameEmail.classList.remove('show')
-      tabContents.classList.remove('margExpanded')
-
-   }else if(el.target !== btnMenu){
-      sidebar.classList.remove('expanded')
       tabContents.classList.remove('margExpanded')
       document.body.classList.remove('active')
-      btnMenu.classList.remove('hide')
-      closeBtn.classList.remove('show')
-      nameEmail.classList.remove('show')
    }
-
+   
+      
 })
 }
 fechaAbreSidebar();
@@ -68,14 +64,17 @@ document.addEventListener('click', (e) =>{
    const closeBtn = document.querySelector('.close-btn');
    const logo = document.querySelector('.logo')
    const btnMenuMobile = document.querySelector('.btn-menu-mobile')
+   const modalSidebar = document.querySelector('.modal-sidebar')
 
    const el = e.target;
    if(el.classList.contains('btn-menu-mobile')){
       sidebar.classList.add('expanded')
       nameEmail.classList.add('show')
       document.body.classList.add('active')
-   }else if(el.classList.contains('close-btn')){
+      modalSidebar.classList.add('open')
+   }else if((el.classList.contains('close-btn') || (!sidebar.contains(el)))){
       document.body.classList.remove('active')
       nameEmail.classList.remove('show')
+      modalSidebar.classList.remove('open')
    }
 })

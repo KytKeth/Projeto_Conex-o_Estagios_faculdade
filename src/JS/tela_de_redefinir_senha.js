@@ -5,11 +5,9 @@ const confirmarSenha = document.getElementById('confirmar_senha')
 
 form.addEventListener('submit', (e) =>{
     e.preventDefault();
-    redefinirSenhaValidate();
-    confirmarSenhaValidate();
 })
 
-const redefinirSenhaValidate = () =>{
+
     redefinirSenha.addEventListener('keyup', () =>{
     if(redefinirSenha.value === ""){
     setErro(redefinirSenha, "A senha é obrigatório")
@@ -20,9 +18,8 @@ const redefinirSenhaValidate = () =>{
         formItem.className = "box"
     }
   })
-}
 
-const confirmarSenhaValidate = () =>{
+
     confirmarSenha.addEventListener('keyup', () =>{
         if(confirmarSenha.value === ""){
             setErro(confirmarSenha, "A confirmação de senha é obrigatória")
@@ -33,7 +30,7 @@ const confirmarSenhaValidate = () =>{
             formItem.className = "box"
         }
     })
-}
+
 
 
 

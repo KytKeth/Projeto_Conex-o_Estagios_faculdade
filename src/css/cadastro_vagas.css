@@ -144,7 +144,7 @@ body{
     width: 100%;
     height: 30px;
     position: relative;
-    margin-bottom: 30px;
+    margin-bottom: 45px;
 }
 
 .forms .box-select select{
@@ -191,7 +191,7 @@ body{
     gap: 10px;
 }
 
-.forms .btns button{
+.forms .btns button, .forms .btns a{
     width: 20%;
     height: 45px;
     border-radius: 10px;
@@ -203,8 +203,12 @@ body{
     transition: .2s all;
 }
 .forms .btns .cancelar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: var(---azul_escuro);
     color: var(---background-body);
+    text-decoration: none;
 }
 .forms .btns .cadastrar{
     background-color: var(---azul_bebe);
@@ -262,6 +266,7 @@ body{
 .mult-select-tag ul li {
     padding: 0.5rem;
     border-radius: 0.25rem;
+    font-size: 16px;
     cursor: pointer;
     color: var(---background-body);
 }
@@ -317,6 +322,19 @@ body{
      font-weight: 600;
  }
 
+.box-select .erros{
+    position: relative;
+    bottom: 0px;
+    font-family: var(---font-principal);
+    display: none;
+    font-size: 14px;
+}
+.box-select.erro .erros{
+    color: red;
+    display: block;
+    font-weight: 600;
+}
+
 
 
 
@@ -331,6 +349,14 @@ body{
     }
     .content .cadastro-vagas{
         width: 100%;
+    }
+
+
+    .forms .btns .cadastrar{
+        width: 25%;
+    }
+    .forms .btns .cancelar{
+        width: 25%;
     }
    
     

@@ -13,6 +13,10 @@ html{
 }
 
 
+body.block{
+    overflow-y: hidden;
+}
+
 :root{
     ---azul_escuro:#3E3C4C;
     ---azul_bebe:#9BF2FE;
@@ -307,6 +311,7 @@ body.active{
     bottom: 0;
     width: 100%;
     height: 100vh;
+    z-index: 10;
     background-color: #00000040;
 }
 .content .modal-filtro .filtros-modal{
@@ -490,12 +495,11 @@ body.active{
     display: none;
     position: fixed;
     width: 100%;
-    z-index: 5;
     top: 0;
     left: 0;
     right: 0;
     height: 100vh;
-    background-color: #ffffff23;
+    background-color: #00000054;
 }
 .sidebar-menu .btn-close{
     position: absolute;
@@ -536,9 +540,11 @@ body.active{
 .sidebar-menu.open{
     width: 250px;
     max-width: 300px;
+    z-index: 10;
 }
 .modal-sidebar.show{
-    display: flex;
+    display: block;
+    z-index: 10;
 }
 /* Fim Interatividade */
 
@@ -752,25 +758,28 @@ hr{
 /* Resposividade */
 @media only screen and (max-width:552px) and (min-width:320px) {
     .cabecalho {
-    display: flex;
-    align-items: center;
-    height: 55px;
-    justify-content: space-between;
-    width: 100%;
-    margin-top: 0;
-    gap: 30px;
-    position: fixed;
-    top: 0;
-    padding: 0 30px;
+        display: flex;
+        align-items: center;
+        height: 55px;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 43px;
+        gap: 30px;
+        padding: 0 30px;
     }
-
+    
     .nav-acessibilidade{
+        justify-content: center;
+    }
+    
+    .nav-acessibilidade .links-menu{
         display: none;
     }
+    
     .cabecalho .menu{
         display: none;
     }
-
+    
     .cabecalho .menu ul{
         display: none;
     }
@@ -778,17 +787,21 @@ hr{
     .cabecalho .btn-menu{
         display: flex;
     }
-
+    
+    .cabecalho .button-entrar{
+        padding: 7px 4px;
+    }
+    
     .content .search-filter{
         margin: 14vh 30px 0;
         flex-direction: column;
         row-gap: 20px;
     }
-
+    
     .content .search-filter .search input{
         width: 100%;
     }
-
+    
     .content .search-filter .filter{
         display: flex;
         justify-content: center;
@@ -799,7 +812,7 @@ hr{
         width: 100%;
         margin: 0 0 30px;
     }
-
+    
     .content .search-filter .filter .btn-filter{
         display: flex;
         width: 450px;
@@ -811,7 +824,7 @@ hr{
     .content .search-filter .filter .btn-filter .text-filter{
         display: flex;
     }
-
+    
     .sidebar-menu{
         display: flex;
     }
@@ -822,13 +835,13 @@ hr{
         width: 100%;
         bottom: 0;
     }
-
-
+    
+    
     .content .filtros-modal .limpa-busca form input[type="submit"]{
         width: 145px;
     }
     
-
+    
     hr{
         display: none;
     }
@@ -837,10 +850,10 @@ hr{
         align-items: start;
         line-height: 74%;
     }
-
+    
     .tab-buttons{
         margin: 0 5px 20px;
-
+        
     }
     .buttons-container{
         width: 100%;
@@ -850,7 +863,7 @@ hr{
         align-items: center;
         row-gap: 20px;
         width: 100%;
-       padding: 0 20px;
+        padding: 0 20px;
     }
     .content .alert-vagas .texts{
         display: flex;
@@ -875,15 +888,23 @@ hr{
         width: 100%;
     }
     /* Hover, Focus, Active */
+    
+    .content .search-filter .filter .btn-filter:hover{
+        background-color: #a6a6a6;
+    }
+    .content .search-filter .filter .btn-filter:active{
+        scale: 0.9;
+    }
+    /* Fim  Hover, Focus, Active */
+}
 
-.content .search-filter .filter .btn-filter:hover{
-    background-color: #a6a6a6;
+@media only screen and (max-width:900px) and (min-width:550px) {
+    .nav-acessibilidade{
+        justify-content: center;
+    }
+    .nav-acessibilidade .links-menu{
+        display: none;
 }
-.content .search-filter .filter .btn-filter:active{
-    scale: 0.9;
 }
-/* Fim  Hover, Focus, Active */
-}
-
 /* Fim Resposividade */
 

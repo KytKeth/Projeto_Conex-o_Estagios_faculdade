@@ -39,6 +39,7 @@
     <option value="back-end">Back-end</option>
     <option value="fullstack">FullStack</option>
     </select>
+    <span class="erros"></span>
     </div>
 
     <div class="box">
@@ -48,7 +49,7 @@
     </div>
     
     <div class="box-tec">
-    <label for="tecnologias">Tecnologias</label>
+    <h2 class="titulo">Tecnologias</hw>
     <select name="tecnologias[]" id="tec" multiple>
     <option value="front-end">Front-End</option>
     <option value="a.net">A.NET</option>
@@ -143,13 +144,13 @@
     <option value="stylis">Stylis</option>
     <option value="clay">Clay</option>
     <option value="css_crush">Css Crush</option>
-        
     </select>
     </div>
 
     <div class="box-data">
-    <label for="data-nasc">Data de Encerramento</label>
-    <input type="date" name="data-nasc" id="data-nasc">
+    <label for="data-encerramento">Data de Encerramento</label>
+    <input type="date" name="data-encerramento" id="data-encerramento">
+    <span class="erros"></span>
     </div>
     
     <h2 class="titulo">Sobre a Empresa</h2>
@@ -168,6 +169,7 @@
     <option value="grande-empresa">Grande empresa</option>
     <option value="pequena-media">Pequena/Média empresa</option>
     </select>
+    <a></a>
     </div>
 
     <div class="box-select">
@@ -203,16 +205,16 @@
 
     <h2 class="titulo">Atividades e Responsabilidade</h2>
 
-    <textarea class="textarea" name="desc-empresa" placeholder="Escreva" id="desc-empresa" cols="30" rows="10"></textarea >
+    <textarea class="textarea" name="atividade-responsabilidade" placeholder="Escreva" id="atividade-responsabilidade" cols="30" rows="10"></textarea >
 
     <h2 class="titulo">Requisitos</h2>
 
-    <textarea class="textarea" name="desc-empresa" placeholder="Escreva" id="desc-empresa" cols="30" rows="10"></textarea>
+    <textarea class="textarea" name="Requisitos" placeholder="Escreva" id="Requisitos" cols="30" rows="10"></textarea>
 
     <div class="btns">
-    <button class="cancelar" type="submit" name="submit">
+    <a href="dashboard_empresa.html" class="cancelar">
     Cancelar
-    </button>
+    </a>
 
     <button class="cadastrar" type="submit" name="submit">
     Cadastrar

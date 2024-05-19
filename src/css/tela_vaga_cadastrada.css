@@ -590,6 +590,10 @@ body.hide{
         background-color: transparent;
         cursor: pointer;
     }
+    .content .sidebar-menu .btn-close span{
+        pointer-events: none;
+        color: var(---background-body);
+    }
 
     .content .sidebar-menu .button-close span{
         pointer-events: none;
@@ -655,6 +659,10 @@ body.hide{
 
     .righ-container .menu-mobile{
         display: flex;
+    }
+
+    .nav-acessibilidade{
+        justify-content: center;
     }
 
     
@@ -761,6 +769,10 @@ body.hide{
         background-color: transparent;
         cursor: pointer;
     }
+    .content .sidebar-menu .btn-close span{
+        pointer-events: none;
+        color: var(---background-body);
+    }
 
     .content .sidebar-menu .button-close span{
         pointer-events: none;
@@ -805,21 +817,3 @@ body.hide{
 }
 
  /* Fim Resposividade */
-
-
-
- /* DarkMode */
-
-/* Background-color com azul-escuro trocadas para branco */
-.nav-acessibilidade.light, .cabecalho.light, .content .cabecalho-container.light, .footer.light, .content .sidebar-menu.light, .content .sidebar-menu.open.light, .content .detalhes-vaga .button-candidatar.light{
-    background-color: #fff;
-    color: var(---azul_escuro);
-    border-color: var(---azul_escuro);
- }
-
- /* color com claro trocadas para azul-escuro */
-
-.nav-acessibilidade .fontes-contraste .fonts.dark, .nav-acessibilidade .fontes-contraste .contraste.dark, .content .cabecalho-container, .content .cabecalho-container .habilidade-skill.dark, .content .cabecalho-container .titulo.dark, .content .cabecalho-container .skills.dark, .content .detalhes-vaga .button-candidatar.dark, .footer.dark, .nav-acessibilidade .links-menu ul li .atalho.dark, .cabecalho .menu ul li .menu-link.dark{
-    color: var(---azul_escuro);
-    border-color: var(---azul_escuro);
-}
