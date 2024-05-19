@@ -1,7 +1,7 @@
 // Tela de login e cadastro  Empresa
 const form = document.querySelector('form')
 const inputSenha = document.getElementById('senha')
-const inputUsername = document.getElementById('username')
+const inputNomeFantasia = document.getElementById('nome-fantasia')
 const inputConfirmarSenha = document.getElementById('confirmar_senha')  
 
 form.addEventListener('submit', (event) =>{
@@ -10,12 +10,12 @@ form.addEventListener('submit', (event) =>{
 
 
 
-inputUsername.addEventListener('keyup', () =>{
-    if(inputUsername.value === ""){
-        setErro(inputUsername, "Username é obrigatório")
-    }else if(inputUsername.value.length > 6){
-        setErro(inputUsername, "User name deve ter 6 caracters")
-        inputUsername.value = inputUsername.value.slice(0, 6)
+inputNomeFantasia.addEventListener('keyup', () =>{
+    if(inputNomeFantasia.value === ""){
+        setErro(inputNomeFantasia, "Nome fantasia é obrigatório")
+    }else if(inputNomeFantasia.value.length > 6){
+        setErro(inputNomeFantasia, "User name deve ter 6 caracters")
+        inputNomeFantasia.value = inputNomeFantasia.value.slice(0, 6)
     }
 })
 
