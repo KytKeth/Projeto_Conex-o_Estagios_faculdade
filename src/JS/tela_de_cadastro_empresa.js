@@ -13,9 +13,9 @@ form.addEventListener('submit', (event) =>{
 inputNomeFantasia.addEventListener('keyup', () =>{
     if(inputNomeFantasia.value === ""){
         setErro(inputNomeFantasia, "Nome fantasia é obrigatório")
-    }else if(inputNomeFantasia.value.length > 6){
-        setErro(inputNomeFantasia, "User name deve ter 6 caracters")
-        inputNomeFantasia.value = inputNomeFantasia.value.slice(0, 6)
+    }else{
+        const formItem = inputNomeFantasia.parentElement;
+        formItem.className = "box";
     }
 })
 
