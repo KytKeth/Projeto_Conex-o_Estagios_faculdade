@@ -14,37 +14,35 @@ const askUsuario = document.getElementById('ask-usuario')
 
 form.addEventListener('submit', (e) =>{
     e.preventDefault();
-    inputNomeValidate();
-    inputSobreNomeValidate();
-    inputCpfValidate();
-    inputTelefoneValidate();
-    inputRespostaValidate();
 })
 
 
-const inputRespostaValidate = () =>{
-    inputResposta.addEventListener('keyup', () =>{
-        if(inputResposta.value === "") {
-            setErro(inputResposta, "Pergunta e resposta são obrigatório")
-        }else{
-            const formItem = inputResposta.parentElement;
-            formItem.className = "box"
-        }
-    })
-}
+
+inputResposta.addEventListener('keyup', () =>{
+    if(inputResposta.value === "") {
+        setErro(inputResposta, "Pergunta e resposta são obrigatório")
+    }else{
+        const formItem = inputResposta.parentElement;
+        formItem.className = "box"
+    }
+})
+
 
 // Input Nome
-const inputNomeValidate = () =>{
+inputNome.addEventListener('keyup', () =>{
+
     if(inputNome.value === ""){
         setErro(inputNome, "Por favor, digite seu nome")
     }else{
         const formItem = inputNome.parentElement;
         formItem.className = "box";
     }
-}
+})
+
 
 // Input Sobrenome
-const inputSobreNomeValidate = () =>{
+inputSobreNome.addEventListener('keyup', () =>{
+
     if(inputSobreNome.value === ""){
         setErro(inputSobreNome, "Por favor, digite seu sobrenome")
     }else if (inputSobreNome.value === inputNome.value){
@@ -54,49 +52,35 @@ const inputSobreNomeValidate = () =>{
         const formItem = inputSobreNome.parentElement;
         formItem.className = "box";
     }
-}
+})
 
 
-// Input Data
-const inputDataNascValidate = () =>{
-    inputDataNasc.addEventListener('input', () =>{
-        criaMascaraData(inputDataNasc);
-        if(inputDataNasc.value === ""){
-            setErro(inputDataNasc, "Digite sua data de nascimento")
-        }else if(inputDataNasc.value.length < 10){
-        setErro(inputDataNasc, "Data de nascimento invalida")
-        inputDataNasc.value = inputDataNasc.value.slice(0, 10)
-        }else{
-            const formItem = inputDataNasc.parentElement;
-            formItem.className = "box";
-        }
-    }) 
-    
-}
+
+
+
 // Input CPF
 const inputCpfValidate = () =>{
-    if((inputCpf.value === "") || (inputCpf.value.length < 14)){
-        setErro(inputCpf, "Digite um CPF válido")
-    }else{
-        const formItem = inputCpf.parentElement;
-        formItem.className = "box";
-    }
+    
 }
-inputCpf.addEventListener('input', () =>{
+inputCpf.addEventListener('keyup', () =>{
     valideCPF(inputCpf)
     if(inputCpf.value.length <= 14){
         formateCPF(inputCpf);
     }else{
         inputCpf.value = inputCpf.value.slice(0, 14);
     }
+    if((inputCpf.value === "") || (inputCpf.value.length < 14)){
+        setErro(inputCpf, "Digite um CPF válido")
+    }else{
+        const formItem = inputCpf.parentElement;
+        formItem.className = "box";
+    }
 })
 
 // Input Cel
 
-const inputTelefoneValidate = () =>{
-    validarTelefone(inputTel)
-}
 inputTel.addEventListener('keyup', (e) =>{
+    validarTelefone(inputTel)
     if(inputTel.value.length <= 15){
         
     }else{
